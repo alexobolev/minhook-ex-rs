@@ -1,0 +1,3 @@
+[submodule "src/minhook_ex_sys/minhook"]
+	path = src/minhook_ex_sys/minhook
+	url = https://github.com/m417z/minhook

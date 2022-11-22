@@ -1,0 +1,7 @@
+[package]
+name = "minhook_ex"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+minhook_ex_sys = { path = "../minhook_ex_sys" }

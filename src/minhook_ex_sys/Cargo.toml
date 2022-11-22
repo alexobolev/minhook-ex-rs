@@ -1,0 +1,10 @@
+[package]
+name = "minhook_ex_sys"
+version = "0.1.0"
+edition = "2021"
+links = "minhook"
+
+[build-dependencies]
+cc = { version = "1.0.77", features = ["parallel"] }
+
+[dependencies]

@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/minhook_ex",
+    "src/minhook_ex_sys",
+]
