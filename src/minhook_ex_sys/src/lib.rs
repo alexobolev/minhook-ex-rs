@@ -2,7 +2,7 @@
 #![allow(unsafe_code)]
 #![allow(non_camel_case_types)]
 
-use std::ffi::{c_void, c_ulonglong, c_short, c_char};
+use std::ffi::{c_char, c_short, c_ulonglong, c_void};
 
 /// MinHook error codes.
 #[repr(C)]
