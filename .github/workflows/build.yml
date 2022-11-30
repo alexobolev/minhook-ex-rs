@@ -1,0 +1,40 @@
+name: Build
+on:
+  push:
+    branches:
+      - master
+      - devel
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build:
+    name: ${{ matrix.profile-name }} build on ${{ matrix.os-name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - windows-2019
+          - windows-2022
+        profile:
+          - dev
+          - release
+        include:
+          - os: windows-2019
+            os-name: Windows 2019
+          - os: windows-2022
+            os-name: Windows 2022
+          - profile: dev
+            profile-name: Debug
+            profile-flag: ''
+          - profile: release
+            profile-name: Release
+            profile-flag: '--release'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Pull dependencies
+        run: |
+          cargo fetch
+      - name: Build code
+        run: |
+          cargo build ${{ matrix.profile-flag }}
