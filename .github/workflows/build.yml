@@ -32,6 +32,8 @@ jobs:
             profile-flag: '--release'
     steps:
       - uses: actions/checkout@v3
+        with:
+          submodules: true
       - name: Pull dependencies
         run: |
           cargo fetch
